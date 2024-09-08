@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "LmqWFsngZRRGnge4UVZrYFyGAz8xahaHXHnO9db5upI=",
+  "Source": "to-do-list-api",
+  "BasePath": "_content/to-do-list-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

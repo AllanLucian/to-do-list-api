@@ -1,0 +1,32 @@
+services:
+  api:
+    container_name: todolist-api
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 5287:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on: ["todolist-api-sql"]
+    networks:
+      todolist-networks:
+
+  todolist-api-sql:
+    image: mcr.microsoft.com/azure-sql-edge
+    environment:
+      - "ACCEPT_EULA=1"
+      - "MSSQL_SA_PASSWORD=todolist2121"
+    volumes:
+      - "todolist-api-sql:/var/opt/sql"
+    networks:
+      todolist-networks:
+        aliases:
+          - "sql"
+
+volumes:
+  todolist-api-sql:
+
+networks:
+  todolist-networks:
+    driver: bridge
