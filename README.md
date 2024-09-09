@@ -50,6 +50,24 @@ VALUES
 GO
 ```
 
+## Observação
+
+Mesmo realizando as configurações do Docker Compose e criando o script do Banco de Dados (Data/create-database.sql), não obtive sucesso ao criar automaticamente a base de dados no momento da subida do Docker (executar script), dessa forma, seria necessário executar o teste local criando um Docker para a base de dados e rodando a aplicação localhost, assim como validei o CRUD.
+
+**Comando a ser Executado para o Teste Local**
+
+```bash
+docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=todolist2121' -p 1433:1433 --name todolist-db -d mcr.microsoft.com/azure-sql-edge
+```
+
+**Link do Swagger Local**
+
+```bash
+http://localhost:5287/swagger/index.html
+```
+
+_Perdão por esse ponto. Peço por gentileza que considerem ;)_
+
 ## Oportunidade
 
 Muito obrigado pela oportunidade e espero que gostem da API.
